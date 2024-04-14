@@ -9,6 +9,7 @@ import java.time.format.DateTimeFormatter;
 public class TournamentMapper {
 
     public static TournamentEntity toEntity(Tournament tournament){
+        System.out.println("Entro toEntity: "+tournament.toString());
         return TournamentEntity.builder()
                 .nombre(tournament.getName())
                 .descripcion(tournament.getDescription())
@@ -19,12 +20,13 @@ public class TournamentMapper {
                 .precio_entrada(tournament.getEntrancePrice())
                 .aforo(tournament.getCapacity())
                 .identificacion("1193134338")
-                .id_tipo_juego(1)
                 .id_categoria(1)
+                .id_tipo_juego(1)
                 .build();
     }
 
     public static Tournament toDomain(TournamentEntity tournamentEntity){
+        System.out.println("Entro toDomain: "+tournamentEntity.toString());
         return Tournament.builder()
                 .name(tournamentEntity.getNombre())
                 .description(tournamentEntity.getDescripcion())
@@ -33,8 +35,8 @@ public class TournamentMapper {
                 .entrancePrice(tournamentEntity.getPrecio_entrada())
                 .capacity(tournamentEntity.getAforo())
                 .organizer(tournamentEntity.getIdentificacion())
-                .gameType("")//pasar de entero a String
-                .category("")//pasar de entero a String
+                .category("Accion")//pasar de entero a String
+                .gameType("Halo")
                 .build();
     }
 

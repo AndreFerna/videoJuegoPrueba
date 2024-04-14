@@ -1,6 +1,7 @@
 package co.com.pragma.api.controller;
 import co.com.pragma.api.dto.TournamentDto;
 import co.com.pragma.api.mapper.TournamentDtoMapper;
+import co.com.pragma.model.tournament.Tournament;
 import co.com.pragma.usecase.tournament.TournamentUseCase;
 import lombok.AllArgsConstructor;
 import org.springframework.http.MediaType;
@@ -14,7 +15,7 @@ public class TournamentController {
 
 
     @PostMapping
-    public String save(@RequestBody TournamentDto tournamentDto) {
+    public Tournament save(@RequestBody TournamentDto tournamentDto) {
       return tournamentUseCase.save(TournamentDtoMapper.tournamentDtoToTournament(tournamentDto));
 
       //return "Hello World";

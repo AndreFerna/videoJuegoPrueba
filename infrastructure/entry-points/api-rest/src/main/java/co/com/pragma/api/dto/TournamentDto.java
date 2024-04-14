@@ -19,7 +19,6 @@ public class TournamentDto {
     private Long entrancePrice; //precio entrada
     private Long capacity;
     private String organizer;
-    private String gameType;
     private String category;
 
 

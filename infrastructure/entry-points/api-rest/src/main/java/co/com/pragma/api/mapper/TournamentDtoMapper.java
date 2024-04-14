@@ -14,7 +14,6 @@ public class TournamentDtoMapper {
                 .entrancePrice(tournamentDto.getEntrancePrice())
                 .capacity(tournamentDto.getCapacity())
                 .organizer(tournamentDto.getOrganizer())
-                .gameType(tournamentDto.getGameType())
                 .category(tournamentDto.getCategory())
                 .build();
     }

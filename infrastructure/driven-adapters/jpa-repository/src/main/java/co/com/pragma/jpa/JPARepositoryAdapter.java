@@ -25,6 +25,8 @@ public class JPARepositoryAdapter extends AdapterOperations<Tournament, Tourname
 
     @Override
     public Tournament saveTournament(Tournament tournament) {
-        return save(TournamentMapper.toDomain(TournamentMapper.toEntity(tournament)));
+        System.out.println("Entro aqui");
+        return TournamentMapper.toDomain(saveData(TournamentMapper.toEntity(tournament)));
+
     }
 }

@@ -22,5 +22,4 @@ public class Tournament{
     private String gameType;
     private String category;
 
-
 }

@@ -1,7 +1,7 @@
 package co.com.pragma.jpa.helper;
 
-import co.com.pragma.jpa.JPARepository;
-import co.com.pragma.jpa.JPARepositoryAdapter;
+import co.com.pragma.jpa.repository.JPATournamentRepository;
+import co.com.pragma.jpa.adapter.JPARepositoryTournamentAdapter;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -19,12 +19,12 @@ import static org.mockito.Mockito.when;
 class AdapterOperationsTest {
 
     @Mock
-    private JPARepository repository;
+    private JPATournamentRepository repository;
 
     @Mock
     private ObjectMapper objectMapper;
 
-    private JPARepositoryAdapter adapter;
+    private JPARepositoryTournamentAdapter adapter;
 
     @BeforeEach
     void setUp() {
@@ -32,7 +32,7 @@ class AdapterOperationsTest {
 
         when(objectMapper.map("value", Object.class)).thenReturn("value");
 
-        adapter = new JPARepositoryAdapter(repository, objectMapper);
+        adapter = new JPARepositoryTournamentAdapter(repository, objectMapper);
     }
 
     @Test

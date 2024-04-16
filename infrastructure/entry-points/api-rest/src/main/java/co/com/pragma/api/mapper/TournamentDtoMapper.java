@@ -15,6 +15,7 @@ public class TournamentDtoMapper {
                 .capacity(tournamentDto.getCapacity())
                 .organizer(tournamentDto.getOrganizer())
                 .category(tournamentDto.getCategory())
+                .gameType(tournamentDto.getGameType())
                 .build();
     }
 

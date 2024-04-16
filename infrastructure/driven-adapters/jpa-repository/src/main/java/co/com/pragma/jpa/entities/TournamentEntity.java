@@ -16,6 +16,8 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 public class TournamentEntity {
+    /**todo crear el parametro en la BD de QR o codigo unico y lo del limite para gratuito**/
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_torneo;
@@ -26,7 +28,7 @@ public class TournamentEntity {
     private Long precio_entrada;
     private Long aforo;
     private String identificacion;
-    private int id_categoria;
-    private int id_tipo_juego;
+    private Long id_categoria;
+    private Long id_tipo_juego;
 }
 

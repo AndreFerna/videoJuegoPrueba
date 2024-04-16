@@ -8,8 +8,7 @@ import java.time.format.DateTimeFormatter;
 
 public class TournamentMapper {
 
-    public static TournamentEntity toEntity(Tournament tournament){
-        System.out.println("Entro toEntity: "+tournament.toString());
+    public static TournamentEntity toEntity(Tournament tournament, Long categoryId, Long gameTypeId){
         return TournamentEntity.builder()
                 .nombre(tournament.getName())
                 .descripcion(tournament.getDescription())
@@ -19,14 +18,15 @@ public class TournamentMapper {
                         DateTimeFormatter.ofPattern("yyyyMMddHHmmss")))
                 .precio_entrada(tournament.getEntrancePrice())
                 .aforo(tournament.getCapacity())
-                .identificacion("1193134338")
-                .id_categoria(1)
-                .id_tipo_juego(1)
+                .identificacion(tournament.getOrganizer())
+                .id_categoria(categoryId)
+                .id_tipo_juego(gameTypeId)
                 .build();
     }
 
-    public static Tournament toDomain(TournamentEntity tournamentEntity){
-        System.out.println("Entro toDomain: "+tournamentEntity.toString());
+    //
+    public static Tournament toDomain(TournamentEntity tournamentEntity, String categoryAlias, String gameTypeName){
+        /**todo Hacer desarrollo de recibir el alias de la categoria y el nombre del tipo de juego**/
         return Tournament.builder()
                 .name(tournamentEntity.getNombre())
                 .description(tournamentEntity.getDescripcion())
@@ -35,8 +35,8 @@ public class TournamentMapper {
                 .entrancePrice(tournamentEntity.getPrecio_entrada())
                 .capacity(tournamentEntity.getAforo())
                 .organizer(tournamentEntity.getIdentificacion())
-                .category("Accion")//pasar de entero a String
-                .gameType("Halo")
+                .category(categoryAlias)//pasar de entero a String
+                .gameType(gameTypeName)
                 .build();
     }
 

@@ -15,11 +15,12 @@ public class TournamentUseCase {
 
     public Tournament save(Tournament tournament){
         Category category = categoryRepository.findByAliasCategory(tournament.getCategory());
-        System.out.println("categoria: "+category);
         GameType gameType = gameTypeRepository.findByNameGameType(tournament.getGameType());
-        System.out.println("tipo juego: "+gameType);
-        Tournament tournament1 = tournamentRepository.saveTournament(tournament, category.getCategoryId(), gameType.getGameTypeId());
-        return tournament1;
+        if(tournament.isFree()){
+            tournament.setCapacity(500L);
+        }
+        Tournament tournamentSave = tournamentRepository.saveTournament(tournament, category.getCategoryId(), gameType.getGameTypeId());
+        return tournamentSave;
     }
 
 }

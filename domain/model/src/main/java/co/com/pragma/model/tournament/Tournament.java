@@ -21,5 +21,7 @@ public class Tournament{
     private String organizer;
     private String gameType;
     private String category;
+    private String uniqueCode;
+    private boolean isFree;
 
 }

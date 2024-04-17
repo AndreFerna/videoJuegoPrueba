@@ -25,11 +25,8 @@ public class JPARepositoryTournamentAdapter extends AdapterOperations<Tournament
 
     @Override
     public Tournament saveTournament(Tournament tournament, Long categoryId, Long gameTypeId) {
-        System.out.println("Entro aqui");
         TournamentEntity tournamentEntity = saveData(TournamentMapper.toEntity(tournament, categoryId, gameTypeId));
         if(tournamentEntity != null){
-            System.out.println("alias categoria: "+tournament.getCategory());
-            System.out.println("nombre tipo juego: "+tournament.getCategory());
             String categoryAlias = tournament.getCategory();
             String gameTypeName = tournament.getGameType();
             return TournamentMapper.toDomain(tournamentEntity, categoryAlias, gameTypeName);

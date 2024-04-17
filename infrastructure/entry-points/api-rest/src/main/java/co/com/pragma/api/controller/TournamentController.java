@@ -15,9 +15,7 @@ public class TournamentController {
 
 
     @PostMapping
-    public Tournament save(@RequestBody TournamentDto tournamentDto) {
-      return tournamentUseCase.save(TournamentDtoMapper.tournamentDtoToTournament(tournamentDto));
-
-      //return "Hello World";
+    public TournamentDto save(@RequestBody TournamentDto tournamentDto) {
+      return TournamentDtoMapper.tournamentToTounamentDto(tournamentUseCase.save(TournamentDtoMapper.tournamentDtoToTournament(tournamentDto)));
     }
 }

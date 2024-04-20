@@ -1,8 +1,5 @@
 package co.com.pragma.model.tournament;
-import co.com.pragma.model.tournament.gateways.TournamentRepository;
 import lombok.*;
-//import lombok.NoArgsConstructor;
-
 
 @Getter
 @Setter

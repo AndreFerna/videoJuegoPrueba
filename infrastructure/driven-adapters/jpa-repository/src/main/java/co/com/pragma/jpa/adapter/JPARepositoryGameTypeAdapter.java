@@ -5,6 +5,8 @@ import co.com.pragma.jpa.repository.JPAGameTypeRepository;
 import co.com.pragma.jpa.entities.GameTypeEntity;
 import co.com.pragma.jpa.helper.AdapterOperations;
 import co.com.pragma.model.tournament.GameType;
+import co.com.pragma.model.tournament.config.ErrorCode;
+import co.com.pragma.model.tournament.config.PragmaException;
 import co.com.pragma.model.tournament.gateways.GameTypeRepository;
 import org.reactivecommons.utils.ObjectMapper;
 import org.springframework.stereotype.Component;
@@ -23,6 +25,10 @@ public class JPARepositoryGameTypeAdapter extends AdapterOperations<GameType, Ga
 
     @Override
     public GameType findByNameGameType(String nameGameType) {
-        return GameTypeMapper.toDomain(repository.findByNombre(nameGameType));
+        GameTypeEntity gameTypeEntity = repository.findByNombre(nameGameType);
+        if(gameTypeEntity==null){
+            throw new PragmaException(ErrorCode.B400003);
+        }
+        return GameTypeMapper.toDomain(gameTypeEntity);
     }
 }

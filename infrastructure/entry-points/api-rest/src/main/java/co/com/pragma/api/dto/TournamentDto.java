@@ -1,8 +1,8 @@
 package co.com.pragma.api.dto;
 
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.*;
-
-import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -10,6 +10,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Builder
 public class TournamentDto {
+    @NotNull
     private String name;
     private String description;
     private String startDate;

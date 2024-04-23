@@ -5,6 +5,8 @@ import co.com.pragma.jpa.helper.AdapterOperations;
 import co.com.pragma.jpa.mapper.CategoryMapper;
 import co.com.pragma.jpa.repository.JPACategoryRepository;
 import co.com.pragma.model.tournament.Category;
+import co.com.pragma.model.tournament.config.ErrorCode;
+import co.com.pragma.model.tournament.config.PragmaException;
 import co.com.pragma.model.tournament.gateways.CategoryRepository;
 import org.reactivecommons.utils.ObjectMapper;
 import org.springframework.stereotype.Component;
@@ -23,6 +25,10 @@ public class JPARepositoryCategoryAdapter extends AdapterOperations<Category, Ca
 
     @Override
     public Category findByAliasCategory(String nameCategory) {
-        return CategoryMapper.toDomain(repository.findByAlias(nameCategory));
+        CategoryEntity categoryEntity = repository.findByAlias(nameCategory);
+        if(categoryEntity==null){
+            throw new PragmaException(ErrorCode.B400001);
+        }
+        return CategoryMapper.toDomain(categoryEntity);
     }
 }

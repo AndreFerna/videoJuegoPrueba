@@ -7,6 +7,7 @@ import co.com.pragma.model.tournament.Tournament;
 import co.com.pragma.model.tournament.View;
 import co.com.pragma.usecase.tournament.TournamentUseCase;
 import co.com.pragma.usecase.tournament.ViewUseCase;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +21,7 @@ public class TournamentController {
 
 
     @PostMapping
-    public TournamentDto save(@RequestBody TournamentDto tournamentDto) {
+    public TournamentDto save(@RequestBody @Valid TournamentDto tournamentDto) {
       return TournamentDtoMapper.tournamentToTounamentDto(tournamentUseCase.save(TournamentDtoMapper.tournamentDtoToTournament(tournamentDto)));
     }
 

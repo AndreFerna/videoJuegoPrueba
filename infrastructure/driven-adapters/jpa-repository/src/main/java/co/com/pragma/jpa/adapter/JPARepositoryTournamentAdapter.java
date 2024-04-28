@@ -33,4 +33,9 @@ public class JPARepositoryTournamentAdapter extends AdapterOperations<Tournament
         }
         return null;
     }
+
+    @Override
+    public int countTournamentsOrganizer(String id) {
+        return repository.countTournamentsOrganizer(id);
+    }
 }

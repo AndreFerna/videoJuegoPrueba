@@ -24,5 +24,6 @@ public class ViewEntity {
     private LocalDateTime fecha;
     private Long id_torneo;
     private boolean gratuito;
+    private Long aforo;
 
 }

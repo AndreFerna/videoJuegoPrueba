@@ -27,7 +27,7 @@ public class JPARepositoryGameTypeAdapter extends AdapterOperations<GameType, Ga
     public GameType findByNameGameType(String nameGameType) {
         GameTypeEntity gameTypeEntity = repository.findByNombre(nameGameType);
         if(gameTypeEntity==null){
-            throw new PragmaException(ErrorCode.B400003);
+            throw new PragmaException(ErrorCode.B409002);
         }
         return GameTypeMapper.toDomain(gameTypeEntity);
     }

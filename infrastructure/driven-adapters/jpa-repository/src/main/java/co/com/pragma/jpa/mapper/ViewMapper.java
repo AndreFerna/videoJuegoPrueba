@@ -14,6 +14,7 @@ public class ViewMapper {
                 .fecha(LocalDateTime.parse(view.getDate(), DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss")))
                 .id_torneo(view.getIdTournament())
                 .gratuito(view.isFree())
+                .aforo(view.getAforo())
                 .build();
     }
 
@@ -23,6 +24,7 @@ public class ViewMapper {
                 .date(viewEntity.getFecha().toString())
                 .isFree(viewEntity.isGratuito())
                 .idTournament(viewEntity.getId_torneo())
+                .aforo(viewEntity.getAforo())
                 .build();
     }
 }

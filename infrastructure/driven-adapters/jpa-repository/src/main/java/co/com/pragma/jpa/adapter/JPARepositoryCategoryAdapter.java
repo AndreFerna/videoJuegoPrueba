@@ -27,7 +27,7 @@ public class JPARepositoryCategoryAdapter extends AdapterOperations<Category, Ca
     public Category findByAliasCategory(String nameCategory) {
         CategoryEntity categoryEntity = repository.findByAlias(nameCategory);
         if(categoryEntity==null){
-            throw new PragmaException(ErrorCode.B400001);
+            throw new PragmaException(ErrorCode.B409001);
         }
         return CategoryMapper.toDomain(categoryEntity);
     }

@@ -26,8 +26,8 @@ public class TournamentController {
     }
 
     @PostMapping("/view")
-    public View save(@RequestBody ViewDto viewDto) {
-        return viewUseCase.save(ViewDtoMapper.viewDtoToView(viewDto));
+    public ViewDto save(@RequestBody ViewDto viewDto) {
+        return ViewDtoMapper.viewToViewDto(viewUseCase.save(ViewDtoMapper.viewDtoToView(viewDto)));
     }
 
 }

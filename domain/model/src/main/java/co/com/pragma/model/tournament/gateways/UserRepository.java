@@ -4,5 +4,6 @@ import co.com.pragma.model.tournament.User;
 
 public interface UserRepository {
 
-    User findByIdOrganizer(String id);
+    boolean exitsById (String id);
+
 }

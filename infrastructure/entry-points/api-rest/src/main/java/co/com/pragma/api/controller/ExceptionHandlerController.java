@@ -18,7 +18,7 @@ public class ExceptionHandlerController {
 
     @ExceptionHandler(MethodArgumentNotValidException.class) //excepcion para validar parametros que llegan en la peticion, parametros obligatorios y longitudes, entre otros
     public ResponseEntity<ResponseErrorDto> handleConstraintViolationException(MethodArgumentNotValidException e) {
-        return genericHandleException(ErrorCode.B400002);
+        return genericHandleException(ErrorCode.B400001);
     }
 
     @ExceptionHandler(PragmaException.class)

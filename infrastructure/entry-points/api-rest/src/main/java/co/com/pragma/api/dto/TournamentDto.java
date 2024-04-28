@@ -1,7 +1,7 @@
 package co.com.pragma.api.dto;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
 import lombok.*;
 
 @Getter
@@ -16,6 +16,8 @@ public class TournamentDto {
     private String startDate;
     private String endDate;
     private Long entrancePrice; //precio entrada
+    @JsonInclude(JsonInclude.Include.NON_NULL)  //etique para no mostrar parametro si llega null
+    private Long capacity;
     private String organizer;
     private String category;
     private String gameType;

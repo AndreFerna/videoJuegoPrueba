@@ -4,7 +4,7 @@ import co.com.pragma.model.tournament.Tournament;
 
 public interface TournamentRepository {
 
-    public Tournament saveTournament(Tournament tournament, Long categoryId, Long gameTypeId);
-
+    Tournament saveTournament(Tournament tournament, Long categoryId, Long gameTypeId);
+    int countTournamentsOrganizer(String id);
 
 }

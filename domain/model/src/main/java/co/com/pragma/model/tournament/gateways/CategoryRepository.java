@@ -4,6 +4,6 @@ import co.com.pragma.model.tournament.Category;
 
 public interface CategoryRepository {
 
-    public Category findByAliasCategory(String nameCategory);
+    Category findByAliasCategory(String nameCategory);
 
 }

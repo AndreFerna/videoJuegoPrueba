@@ -28,6 +28,7 @@ public class TournamentDtoMapper {
                 .startDate(tournament.getStartDate())
                 .endDate(tournament.getEndDate())
                 .entrancePrice(tournament.getEntrancePrice())
+                .capacity(tournament.getCapacity())
                 .organizer(tournament.getOrganizer())
                 .category(tournament.getCategory())
                 .gameType(tournament.getGameType())

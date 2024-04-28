@@ -4,6 +4,7 @@ import co.com.pragma.model.tournament.View;
 
 public interface ViewRepository {
 
-    public View saveView(View view);
+    View saveView(View view);
+    int countFreeViewsPerTournament(Long tournamentId);
 
 }

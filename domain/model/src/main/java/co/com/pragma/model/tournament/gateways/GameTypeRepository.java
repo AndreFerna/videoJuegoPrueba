@@ -4,5 +4,5 @@ import co.com.pragma.model.tournament.GameType;
 
 public interface GameTypeRepository {
 
-    public GameType findByNameGameType(String nameGameType);
+    GameType findByNameGameType(String nameGameType);
 }

@@ -15,9 +15,11 @@ public class ViewDtoMapper {
 
     public static ViewDto viewToViewDto(View view){
         return ViewDto.builder()
+                .url(view.getUrl())
                 .date(view.getDate())
-                .isFree(view.isFree())
+                .free(view.isFree())
                 .idTournament(view.getIdTournament())
+                .aforo(view.getAforo())
                 .build();
     }
 

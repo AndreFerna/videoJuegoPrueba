@@ -16,12 +16,9 @@ public class JPARepositoryUserAdapter extends AdapterOperations<User, UserEntity
         super(repository, mapper, d -> mapper.map(d, User.class));
     }
 
+
     @Override
-    public User findByIdOrganizer(String id) {
-        User user = findById(id);
-        if(user==null){
-            throw new PragmaException(ErrorCode.B400004);
-        }
-        return user;
+    public boolean exitsById(String id) {
+        return repository.existsById(id);
     }
 }

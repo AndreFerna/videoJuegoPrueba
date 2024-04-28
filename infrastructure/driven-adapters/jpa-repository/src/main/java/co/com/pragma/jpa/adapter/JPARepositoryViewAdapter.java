@@ -23,4 +23,9 @@ public class JPARepositoryViewAdapter extends AdapterOperations<View, ViewEntity
         ViewEntity viewEntity = saveData(ViewMapper.toEntity(view));
         return ViewMapper.toDomain(viewEntity);
     }
+
+    @Override
+    public int countFreeViewsPerTournament(Long tournamentId) {
+        return repository.countFreeViewsPerTournament(tournamentId);
+    }
 }

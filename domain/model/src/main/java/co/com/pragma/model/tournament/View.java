@@ -12,4 +12,5 @@ public class View {
     private String date;
     private boolean isFree;
     private Long idTournament;
+    private Long aforo;
 }

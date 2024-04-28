@@ -20,12 +20,17 @@ public class TournamentUseCase {
     public Tournament save(Tournament tournament){
         Category category = categoryRepository.findByAliasCategory(tournament.getCategory());
         GameType gameType = gameTypeRepository.findByNameGameType(tournament.getGameType());
-        userRepository.findByIdOrganizer(tournament.getOrganizer());
-        if(tournament.isFree()){
-            tournament.setCapacity(500L);
+        boolean userExists = userRepository.exitsById(tournament.getOrganizer());
+        if(!userExists){
+            throw new PragmaException(ErrorCode.B409000);
         }
-        Tournament tournamentSave = tournamentRepository.saveTournament(tournament, category.getCategoryId(), gameType.getGameTypeId());
-        return tournamentSave;
+        if(tournament.isFree()){
+            if(tournamentRepository.countTournamentsOrganizer(tournament.getOrganizer()) > 1){
+                throw new PragmaException(ErrorCode.B409003);
+            }
+            tournament.setCapacity(100L);
+        }
+        return tournamentRepository.saveTournament(tournament, category.getCategoryId(), gameType.getGameTypeId());
     }
 
 }

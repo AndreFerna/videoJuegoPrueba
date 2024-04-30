@@ -16,5 +16,6 @@ public class ViewDto {
     private Long idTournament;
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private Long aforo;
+    private String uniqueCode;
 
 }

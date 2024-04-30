@@ -9,6 +9,7 @@ import lombok.*;
 @ToString
 public class Tournament{
 
+    private Long idTournament;
     private String name;
     private String description;
     private String startDate;
@@ -16,7 +17,6 @@ public class Tournament{
     private Long entrancePrice; //precio entrada
     private Long capacity;
     private String organizer;
-    private String gameType;
     private String category;
     private String uniqueCode;
     private boolean isFree;

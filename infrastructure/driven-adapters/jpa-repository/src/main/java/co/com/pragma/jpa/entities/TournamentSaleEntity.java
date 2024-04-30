@@ -6,25 +6,23 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.*;
 
-import java.time.LocalDateTime;
-
 @Getter
 @Setter
 @Builder
-@Entity(name = "vista")
+@Entity(name = "venta_torneo")
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class ViewEntity {
-
+public class TournamentSaleEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_vista;
-    private String url;
-    private LocalDateTime fecha;
-    private Long id_torneo;
-    private boolean gratuito;
-    private Long aforo;
+    private Long id_venta_torneo;
+    private Long precio_venta;
+    private Long comision;
     private String codigo_unico;
+    private String identificacion;
+    private Long id_torneo;
+
+
 
 }

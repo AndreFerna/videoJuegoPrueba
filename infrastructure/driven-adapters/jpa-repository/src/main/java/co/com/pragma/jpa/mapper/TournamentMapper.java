@@ -8,7 +8,7 @@ import java.time.format.DateTimeFormatter;
 
 public class TournamentMapper {
 
-    public static TournamentEntity toEntity(Tournament tournament, Long categoryId, Long gameTypeId){
+    public static TournamentEntity toEntity(Tournament tournament, Long categoryId){
         return TournamentEntity.builder()
                 .nombre(tournament.getName())
                 .descripcion(tournament.getDescription())
@@ -20,15 +20,15 @@ public class TournamentMapper {
                 .aforo(tournament.getCapacity())
                 .identificacion(tournament.getOrganizer())
                 .id_categoria(categoryId)
-                .id_tipo_juego(gameTypeId)
                 .codigo_unico(tournament.getUniqueCode())
                 .gratuito(tournament.isFree())
                 .build();
     }
 
     //
-    public static Tournament toDomain(TournamentEntity tournamentEntity, String categoryAlias, String gameTypeName){
+    public static Tournament toDomain(TournamentEntity tournamentEntity, String categoryAlias){
         return Tournament.builder()
+                .idTournament(tournamentEntity.getId_torneo())
                 .name(tournamentEntity.getNombre())
                 .description(tournamentEntity.getDescripcion())
                 .startDate(tournamentEntity.getFecha_inicio().toString())
@@ -37,7 +37,6 @@ public class TournamentMapper {
                 .capacity(tournamentEntity.getAforo())
                 .organizer(tournamentEntity.getIdentificacion())
                 .category(categoryAlias)
-                .gameType(gameTypeName)
                 .uniqueCode(tournamentEntity.getCodigo_unico())
                 .isFree(tournamentEntity.getGratuito())
                 .build();

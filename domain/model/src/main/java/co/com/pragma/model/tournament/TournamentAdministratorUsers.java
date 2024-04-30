@@ -8,10 +8,10 @@ import lombok.*;
 @AllArgsConstructor
 @Builder(toBuilder = true)
 @ToString
-public class GameType {
-    private Long gameTypeId;
-    private String name;
-    private Long numberPlayers;
-    private Long categoryId;
+public class TournamentAdministratorUsers {
+
+    private Long adminUserTournamentId;
+    private Long tournamentId;
+    private String userId;
 
 }

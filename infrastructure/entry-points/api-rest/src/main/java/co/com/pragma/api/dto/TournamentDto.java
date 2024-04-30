@@ -20,7 +20,6 @@ public class TournamentDto {
     private Long capacity;
     private String organizer;
     private String category;
-    private String gameType;
     private String uniqueCode;
     private boolean isFree;
 }

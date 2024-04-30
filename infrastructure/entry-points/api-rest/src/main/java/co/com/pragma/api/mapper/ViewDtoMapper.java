@@ -20,6 +20,7 @@ public class ViewDtoMapper {
                 .free(view.isFree())
                 .idTournament(view.getIdTournament())
                 .aforo(view.getAforo())
+                .uniqueCode(view.getUniqueCode())
                 .build();
     }
 

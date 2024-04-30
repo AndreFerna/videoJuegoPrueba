@@ -1,4 +1,5 @@
 package co.com.pragma.model.tournament;
+
 import lombok.*;
 
 @Getter
@@ -7,11 +8,11 @@ import lombok.*;
 @AllArgsConstructor
 @Builder(toBuilder = true)
 @ToString
-public class View {
-    private String url;
-    private String date;
-    private boolean isFree;
-    private Long idTournament;
-    private Long aforo;
+public class TournamentSale {
+    private Long salePrice;
+    private Long commission;
     private String uniqueCode;
+    private String idUser;
+    private Long idTournament;
+
 }

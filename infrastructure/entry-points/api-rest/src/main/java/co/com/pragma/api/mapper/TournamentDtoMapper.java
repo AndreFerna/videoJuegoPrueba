@@ -15,7 +15,6 @@ public class TournamentDtoMapper {
                 .entrancePrice(tournamentDto.getEntrancePrice())
                 .organizer(tournamentDto.getOrganizer())
                 .category(tournamentDto.getCategory())
-                .gameType(tournamentDto.getGameType())
                 .uniqueCode(UUID.randomUUID().toString())
                 .isFree(tournamentDto.isFree())
                 .build();
@@ -31,7 +30,6 @@ public class TournamentDtoMapper {
                 .capacity(tournament.getCapacity())
                 .organizer(tournament.getOrganizer())
                 .category(tournament.getCategory())
-                .gameType(tournament.getGameType())
                 .uniqueCode(tournament.getUniqueCode())
                 .isFree(tournament.isFree())
                 .build();

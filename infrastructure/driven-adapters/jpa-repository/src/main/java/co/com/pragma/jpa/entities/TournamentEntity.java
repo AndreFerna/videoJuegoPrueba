@@ -16,7 +16,6 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 public class TournamentEntity {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_torneo;
@@ -28,7 +27,6 @@ public class TournamentEntity {
     private Long aforo;
     private String identificacion;
     private Long id_categoria;
-    private Long id_tipo_juego;
     private String codigo_unico;
     private Boolean gratuito;
 }

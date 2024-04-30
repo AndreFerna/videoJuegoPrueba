@@ -5,13 +5,16 @@ import co.com.pragma.jpa.entities.TournamentEntity;
 import co.com.pragma.jpa.helper.AdapterOperations;
 import co.com.pragma.jpa.mapper.TournamentMapper;
 import co.com.pragma.model.tournament.Tournament;
+import co.com.pragma.model.tournament.config.ErrorCode;
+import co.com.pragma.model.tournament.config.PragmaException;
 import co.com.pragma.model.tournament.gateways.TournamentRepository;
 import org.reactivecommons.utils.ObjectMapper;
 import org.springframework.stereotype.Component;
 
+import java.util.Optional;
+
 @Component
-public class JPARepositoryTournamentAdapter extends AdapterOperations<Tournament, TournamentEntity, Long, JPATournamentRepository> implements TournamentRepository
-{
+public class JPARepositoryTournamentAdapter extends AdapterOperations<Tournament, TournamentEntity, Long, JPATournamentRepository> implements TournamentRepository {
 
     public JPARepositoryTournamentAdapter(JPATournamentRepository repository, ObjectMapper mapper) {
         /**
@@ -24,12 +27,11 @@ public class JPARepositoryTournamentAdapter extends AdapterOperations<Tournament
 
 
     @Override
-    public Tournament saveTournament(Tournament tournament, Long categoryId, Long gameTypeId) {
-        TournamentEntity tournamentEntity = saveData(TournamentMapper.toEntity(tournament, categoryId, gameTypeId));
+    public Tournament saveTournament(Tournament tournament, Long categoryId) {
+        TournamentEntity tournamentEntity = saveData(TournamentMapper.toEntity(tournament, categoryId));
         if(tournamentEntity != null){
             String categoryAlias = tournament.getCategory();
-            String gameTypeName = tournament.getGameType();
-            return TournamentMapper.toDomain(tournamentEntity, categoryAlias, gameTypeName);
+            return TournamentMapper.toDomain(tournamentEntity, categoryAlias);
         }
         return null;
     }
@@ -38,4 +40,25 @@ public class JPARepositoryTournamentAdapter extends AdapterOperations<Tournament
     public int countTournamentsOrganizer(String id) {
         return repository.countTournamentsOrganizer(id);
     }
+
+    @Override
+    public void deleteById(Long id) {
+        deleteById(id);
+    }
+
+    @Override
+    public boolean existById(Long id) {
+        return repository.existsById(id);
+    }
+
+    @Override
+    public Tournament findByIdTournament(Long id) {
+        Optional<TournamentEntity> tournamentEntity = repository.findById(id);
+        if(!tournamentEntity.isPresent()){
+            throw new PragmaException(ErrorCode.B409006);
+        }
+        return TournamentMapper.toDomain(tournamentEntity.get(), "");
+    }
+
+
 }

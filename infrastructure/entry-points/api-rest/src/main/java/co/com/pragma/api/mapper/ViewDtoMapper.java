@@ -10,6 +10,7 @@ public class ViewDtoMapper {
                 .date(viewDto.getDate())
                 .isFree(viewDto.isFree())
                 .idTournament(viewDto.getIdTournament())
+                .entrancePrice(viewDto.getEntrancePrice())
                 .build();
     }
 
@@ -21,6 +22,7 @@ public class ViewDtoMapper {
                 .idTournament(view.getIdTournament())
                 .aforo(view.getAforo())
                 .uniqueCode(view.getUniqueCode())
+                .entrancePrice(view.getEntrancePrice())
                 .build();
     }
 

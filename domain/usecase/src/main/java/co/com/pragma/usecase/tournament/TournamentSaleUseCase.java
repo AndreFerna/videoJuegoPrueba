@@ -21,7 +21,7 @@ public class TournamentSaleUseCase {
     public TournamentSale save(TournamentSale tournamentSale) {
         boolean existUser = userRepository.exitsById(tournamentSale.getIdUser());
         if(!existUser){
-            throw new PragmaException(ErrorCode.B409000);
+            throw new PragmaException(ErrorCode.B409007);
         }
         Tournament tournament = tournamentRepository.findByIdTournament(tournamentSale.getIdTournament());
         tournamentSale.setSalePrice(tournament.getEntrancePrice());

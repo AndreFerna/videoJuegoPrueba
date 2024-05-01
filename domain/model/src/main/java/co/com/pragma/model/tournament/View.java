@@ -14,4 +14,6 @@ public class View {
     private Long idTournament;
     private Long aforo;
     private String uniqueCode;
+    private Long entrancePrice;
+
 }

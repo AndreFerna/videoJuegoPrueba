@@ -11,7 +11,9 @@ public enum ErrorCode {
     B409003("B409-003", "You have already created two free tournaments", 409),
     B409004("B409-004", "You have already created a free view.", 409),
     B409005("B409-005", "The tournament was not created", 409),
-    B409006("B409-006", "No Tournament Found", 409);
+    B409006("B409-006", "No Tournament Found", 409),
+    B409007("B409-007", "No User Found", 409),
+    B409008("B409-008", "No View Found", 409);
 
     private final String code;
     private final String log;

@@ -16,6 +16,7 @@ public class ViewMapper {
                 .gratuito(view.isFree())
                 .aforo(view.getAforo())
                 .codigo_unico(view.getUniqueCode())
+                .precio_entrada(view.getEntrancePrice())
                 .build();
     }
 
@@ -27,6 +28,7 @@ public class ViewMapper {
                 .idTournament(viewEntity.getId_torneo())
                 .aforo(viewEntity.getAforo())
                 .uniqueCode(viewEntity.getCodigo_unico())
+                .entrancePrice(viewEntity.getPrecio_entrada())
                 .build();
     }
 }

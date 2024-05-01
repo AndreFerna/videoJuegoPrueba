@@ -17,5 +17,6 @@ public class ViewDto {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private Long aforo;
     private String uniqueCode;
+    private Long entrancePrice;
 
 }

@@ -6,5 +6,7 @@ public interface ViewRepository {
 
     View saveView(View view);
     int countFreeViewsPerTournament(Long tournamentId);
+    boolean existById(Long id);
+    View findByIdView(Long id);
 
 }

@@ -1,12 +1,13 @@
 package co.com.pragma.api.mapper;
 
-import co.com.pragma.api.dto.TournamentDto;
+import co.com.pragma.api.dto.TournamentRequestDto;
+import co.com.pragma.api.dto.TournamentResponseDto;
 import co.com.pragma.model.tournament.Tournament;
 
 import java.util.UUID;
 
 public class TournamentDtoMapper {
-    public static Tournament tournamentDtoToTournament(TournamentDto tournamentDto){
+    public static Tournament tournamentDtoToTournament(TournamentRequestDto tournamentDto){
         return Tournament.builder()
                 .name(tournamentDto.getName())
                 .description(tournamentDto.getDescription())
@@ -16,12 +17,12 @@ public class TournamentDtoMapper {
                 .organizer(tournamentDto.getOrganizer())
                 .category(tournamentDto.getCategory())
                 .uniqueCode(UUID.randomUUID().toString())
-                .isFree(tournamentDto.isFree())
+                .isFree(tournamentDto.getFree())
                 .build();
     }
 
-    public static TournamentDto tournamentToTounamentDto(Tournament tournament){
-        return TournamentDto.builder()
+    public static TournamentResponseDto tournamentToTounamentDto(Tournament tournament){
+        return TournamentResponseDto.builder()
                 .name(tournament.getName())
                 .description(tournament.getDescription())
                 .startDate(tournament.getStartDate())
@@ -31,7 +32,7 @@ public class TournamentDtoMapper {
                 .organizer(tournament.getOrganizer())
                 .category(tournament.getCategory())
                 .uniqueCode(tournament.getUniqueCode())
-                .isFree(tournament.isFree())
+                .free(tournament.isFree())
                 .build();
     }
 

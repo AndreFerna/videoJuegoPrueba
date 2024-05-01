@@ -1,18 +1,19 @@
 package co.com.pragma.api.mapper;
 
-import co.com.pragma.api.dto.ViewSaleDto;
+import co.com.pragma.api.dto.ViewSaleRequestDto;
+import co.com.pragma.api.dto.ViewSaleResponseDto;
 import co.com.pragma.model.tournament.ViewSale;
 public class ViewSaleDtoMapper {
 
-    public static ViewSale viewSaleDtoToViewSale(ViewSaleDto viewSaleDto){
+    public static ViewSale viewSaleDtoToViewSale(ViewSaleRequestDto viewSaleResponseDto){
         return ViewSale.builder()
-                .idUser(viewSaleDto.getIdUser())
-                .idView(viewSaleDto.getIdView())
+                .idUser(viewSaleResponseDto.getIdUser())
+                .idView(viewSaleResponseDto.getIdView())
                 .build();
     }
 
-    public static ViewSaleDto viewSaleToViewSaleDto(ViewSale viewSale){
-        return ViewSaleDto.builder()
+    public static ViewSaleResponseDto viewSaleToViewSaleDto(ViewSale viewSale){
+        return ViewSaleResponseDto.builder()
                 .salePrice(viewSale.getSalePrice())
                 .commission(viewSale.getCommission())
                 .uniqueCode(viewSale.getUniqueCode())

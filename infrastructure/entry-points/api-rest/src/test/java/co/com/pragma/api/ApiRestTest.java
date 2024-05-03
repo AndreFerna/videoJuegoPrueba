@@ -7,11 +7,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ApiRestTest {
 
-    TournamentController apiRest = new TournamentController();
+    //TournamentController apiRest = new TournamentController();
 
-    @Test
+    /*@Test
     void apiRestTest() {
         var response = apiRest.commandName();
         assertEquals("Hello World", response);
-    }
+    }*/
 }

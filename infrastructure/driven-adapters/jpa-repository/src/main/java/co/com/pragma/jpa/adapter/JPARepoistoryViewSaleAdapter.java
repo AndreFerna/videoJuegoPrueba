@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class JPARepoistoryViewSaleAdapter extends AdapterOperations<ViewSale, ViewSaleEntity, Long, JPAViewSaleRepository> implements ViewSaleRepository {
 
-    protected JPARepoistoryViewSaleAdapter(JPAViewSaleRepository repository, ObjectMapper mapper) {
+    public JPARepoistoryViewSaleAdapter(JPAViewSaleRepository repository, ObjectMapper mapper) {
         super(repository, mapper, d -> mapper.map(d, ViewSale.class));
     }
 

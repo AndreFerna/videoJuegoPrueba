@@ -13,7 +13,9 @@ public enum ErrorCode {
     B409005("B409-005", "The tournament was not created", 409),
     B409006("B409-006", "No Tournament Found", 409),
     B409007("B409-007", "No User Found", 409),
-    B409008("B409-008", "No View Found", 409);
+    B409008("B409-008", "No View Found", 409),
+    B409009("B409-009", "Unsaved tournament", 409)
+    ;
 
     private final String code;
     private final String log;

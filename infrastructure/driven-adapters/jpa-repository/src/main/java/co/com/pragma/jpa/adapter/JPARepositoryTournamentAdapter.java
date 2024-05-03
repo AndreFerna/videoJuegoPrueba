@@ -33,7 +33,7 @@ public class JPARepositoryTournamentAdapter extends AdapterOperations<Tournament
             String categoryAlias = tournament.getCategory();
             return TournamentMapper.toDomain(tournamentEntity, categoryAlias);
         }
-        return null;
+        throw new PragmaException(ErrorCode.B409009);
     }
 
     @Override

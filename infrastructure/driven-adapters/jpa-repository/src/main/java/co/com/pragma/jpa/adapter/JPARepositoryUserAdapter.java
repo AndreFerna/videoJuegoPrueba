@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class JPARepositoryUserAdapter extends AdapterOperations<User, UserEntity, String, JPAUserRepository> implements UserRepository {
-    protected JPARepositoryUserAdapter(JPAUserRepository repository, ObjectMapper mapper) {
+    public JPARepositoryUserAdapter(JPAUserRepository repository, ObjectMapper mapper) {
         super(repository, mapper, d -> mapper.map(d, User.class));
     }
 

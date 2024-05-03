@@ -15,7 +15,7 @@ import java.util.function.Function;
 public class JPARepositoryTournamentSaleAdapter extends AdapterOperations<TournamentSale, TournamentSaleEntity, Long, JPATournamentSaleRepository> implements TournamentSaleRepository {
 
 
-    protected JPARepositoryTournamentSaleAdapter(JPATournamentSaleRepository repository, ObjectMapper mapper) {
+    public JPARepositoryTournamentSaleAdapter(JPATournamentSaleRepository repository, ObjectMapper mapper) {
         super(repository, mapper, d -> mapper.map(d, TournamentSale.class));
     }
 

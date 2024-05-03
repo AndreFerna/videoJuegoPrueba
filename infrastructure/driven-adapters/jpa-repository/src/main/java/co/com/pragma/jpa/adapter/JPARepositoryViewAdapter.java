@@ -17,7 +17,7 @@ import java.util.function.Function;
 @Component
 public class JPARepositoryViewAdapter extends AdapterOperations<View, ViewEntity, Long, JPAViewRepository> implements ViewRepository {
 
-    protected JPARepositoryViewAdapter(JPAViewRepository repository, ObjectMapper mapper) {
+    public JPARepositoryViewAdapter(JPAViewRepository repository, ObjectMapper mapper) {
         super(repository, mapper, d -> mapper.map(d, View.class));
     }
 

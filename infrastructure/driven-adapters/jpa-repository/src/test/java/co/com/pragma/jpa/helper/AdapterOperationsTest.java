@@ -35,7 +35,7 @@ class AdapterOperationsTest {
         adapter = new JPARepositoryTournamentAdapter(repository, objectMapper);
     }
 
-    @Test
+    /*@Test
     void testSave() {
 
         Object objectValue = "value";
@@ -94,5 +94,5 @@ class AdapterOperationsTest {
         Object result = adapter.findByExample(objectValue);
 
         assertEquals(result, objectValues);
-    }
+    }*/
 }

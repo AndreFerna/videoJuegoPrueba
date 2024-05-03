@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 public class JPARepositoryTournamentAdministratorUsers extends AdapterOperations<TournamentAdministratorUsers, TournamentAdministratorUsersEntity, Long, JPATournamentAdministratorUsersRepository> implements TournamentAdministratorUsersRepository {
 
 
-    protected JPARepositoryTournamentAdministratorUsers(JPATournamentAdministratorUsersRepository repository, ObjectMapper mapper) {
+    public JPARepositoryTournamentAdministratorUsers(JPATournamentAdministratorUsersRepository repository, ObjectMapper mapper) {
         super(repository, mapper, d -> mapper.map(d, TournamentAdministratorUsers.class));
     }
 

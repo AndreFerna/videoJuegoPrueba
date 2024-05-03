@@ -6,6 +6,8 @@ import lombok.*;
 @Setter
 @Builder(toBuilder = true)
 @ToString
+@AllArgsConstructor
+@NoArgsConstructor
 public class ViewSale {
     private Long salePrice;
     private Long commission;
